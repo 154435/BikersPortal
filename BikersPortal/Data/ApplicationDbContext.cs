@@ -1,10 +1,11 @@
 ﻿using BikersPortal.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 
 namespace BikersPortal.Data
 {
-    public class ApplicationDbContext : DbContext
+    public class ApplicationDbContext : IdentityDbContext
     {
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Order> Orders { get; set; }

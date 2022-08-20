@@ -2,6 +2,7 @@ using BikersPortal.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -25,11 +26,27 @@ namespace BikersPortal
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ApplicationDbContext>((options) =>
-            {
-                options.UseSqlServer(Configuration.GetConnectionString("MyDefaultConnectionString"));
-            });
+            //services.AddDbContext<ApplicationDbContext>((options) =>
+            //{
+            //    options.UseSqlServer(Configuration.GetConnectionString("MyDefaultConnectionString"));
+            //});
+            services
+              .AddDbContext<ApplicationDbContext>((options) =>
+              {
+                  options.UseSqlServer(Configuration.GetConnectionString("MyDefaultConnectionString"));
+              });
+
+            // Register the OWIN Identity Middleware
+            // to use the default IdentityUser and IdentityRole profiles
+            // and store the data in the ApplicationDbContext
+            services
+                .AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+                .AddEntityFrameworkStores<ApplicationDbContext>();
+
+            // Register the Razor View Engine to provide support for Razor Pages.
             services.AddRazorPages();
+
+           
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,6 +67,14 @@ namespace BikersPortal
             app.UseStaticFiles();
 
             app.UseRouting();
+
+            // Register the MVC Middleware
+            // - NEEDED for Swagger Documentation Middleware 
+            // - NEEDED for the API support (if applicable)
+            //services.AddMvc();
+
+            // Activate the OWIN Middleware to use Authentication and Authorization Services.
+            app.UseAuthentication();
 
             app.UseAuthorization();
 

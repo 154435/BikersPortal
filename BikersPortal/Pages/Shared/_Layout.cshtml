@@ -25,30 +25,47 @@
                             <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Options</a>
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Admin</a>
                             <div class="dropdown-menu" style="background-color:greenyellow">
                                 <a class="dropdown-item"
                                    asp-area="Biker" asp-controller="Customers" asp-action="Index">
-                                  Customer
+                                  Manage Customer
                                 </a>
                                 <a class="dropdown-item"
                                    asp-area="Biker" asp-controller="Products" asp-action="Index">
-                                    Products
+                                   Manage Products
                                 </a>
                                 <a class="dropdown-item"
                                    asp-area="Biker" asp-controller="Orders" asp-action="Index">
-                                    Orders
+                                   Manage Orders
                                 </a>
                                 <a class="dropdown-item"
                                    asp-area="Biker" asp-controller="ProductTypes" asp-action="Index">
-                                    ProductTypes
+                                   Manage ProductTypes
                                 </a>
                                 <a class="dropdown-item"
                                    asp-area="Biker" asp-controller="PaymentMethods" asp-action="Index">
-                                    PaymentMethods
+                                   Manage PaymentMethods
                                 </a>
 
 
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">User Portal</a>
+                            <div class="dropdown-menu" style="background-color:greenyellow">
+                             @*   <a class="dropdown-item"
+                                   asp-area="Biker" asp-controller="Customers" asp-action="Index">
+                                    Customer
+                                </a>*@
+                                <a class="dropdown-item"
+                                   asp-area="Biker" asp-controller="Products" asp-action="Index1">
+                                    Products
+                                </a>
+                                 <a class="dropdown-item"
+                                   asp-area="Biker" asp-controller="Orders" asp-action="Index1">
+                                    Orders
+                                </a>
                             </div>
                         </li>
                     </ul>

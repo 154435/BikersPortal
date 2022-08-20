@@ -27,6 +27,14 @@ namespace BikersPortal.Areas.Biker.Controllers
             return View(await applicationDbContext.ToListAsync());
         }
 
+        // GET: Biker/Products/Index1
+        public async Task<IActionResult> Index1()
+        {
+            var applicationDbContext = _context.Products.Include(p => p.ProductType);
+            return View(await applicationDbContext.ToListAsync());
+        }
+
+
         // GET: Biker/Products/Details/5
         public async Task<IActionResult> Details(int? id)
         {

@@ -27,6 +27,13 @@ namespace BikersPortal.Areas.Biker.Controllers
             return View(await applicationDbContext.ToListAsync());
         }
 
+        // GET: Biker/Orders/For user
+        public async Task<IActionResult> Index1()
+        {
+            var applicationDbContext = _context.Orders.Include(o => o.Customer).Include(o => o.PaymentMethods).Include(o => o.Product);
+            return View(await applicationDbContext.ToListAsync());
+        }
+
         // GET: Biker/Orders/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -54,6 +61,17 @@ namespace BikersPortal.Areas.Biker.Controllers
             ViewData["CustomerId"] = new SelectList(_context.Customers, "CustomerId", "CustomerName");
             ViewData["PaymentMethodId"] = new SelectList(_context.PaymentMethod, "PaymentMethodId", "PaymentMethodName");
             ViewData["ProductId"] = new SelectList(_context.Products, "ProductId", "ProductName");
+
+            return View();
+        }
+
+         // GET: Biker/Orders/Create/for user
+        public IActionResult Create1()
+        {
+            ViewData["CustomerId"] = new SelectList(_context.Customers, "CustomerId", "CustomerName");
+            ViewData["PaymentMethodId"] = new SelectList(_context.PaymentMethod, "PaymentMethodId", "PaymentMethodName");
+            ViewData["ProductId"] = new SelectList(_context.Products, "ProductId", "ProductName");
+
             return View();
         }
 
@@ -68,7 +86,7 @@ namespace BikersPortal.Areas.Biker.Controllers
             {
                 _context.Add(order);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Index1));
             }
             ViewData["CustomerId"] = new SelectList(_context.Customers, "CustomerId", "CustomerName", order.CustomerId);
             ViewData["PaymentMethodId"] = new SelectList(_context.PaymentMethod, "PaymentMethodId", "PaymentMethodName", order.PaymentMethodId);
