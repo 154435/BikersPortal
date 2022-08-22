@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using BikersPortal.Data;
 using BikersPortal.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BikersPortal.Areas.Biker.Controllers
 {
+    [Authorize]
     [Area("Biker")]
     public class OrdersController : Controller
     {
@@ -33,6 +35,14 @@ namespace BikersPortal.Areas.Biker.Controllers
             var applicationDbContext = _context.Orders.Include(o => o.Customer).Include(o => o.PaymentMethods).Include(o => o.Product);
             return View(await applicationDbContext.ToListAsync());
         }
+
+        // GET: Biker/Orders/Order details
+        public async Task<IActionResult> Index2()
+        {
+            var applicationDbContext = _context.Orders.Include(o => o.Customer).Include(o => o.PaymentMethods).Include(o => o.Product);
+            return View(await applicationDbContext.ToListAsync());
+        }
+
 
         // GET: Biker/Orders/Details/5
         public async Task<IActionResult> Details(int? id)

@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using BikersPortal.Data;
 using BikersPortal.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BikersPortal.Areas.Biker.Controllers
 {
+    [Authorize]
     [Area("Biker")]
     public class PaymentMethodsController : Controller
     {

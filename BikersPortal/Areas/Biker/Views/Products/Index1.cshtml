@@ -4,10 +4,12 @@
     ViewData["Title"] = "Index1";
 }
 
-<h1>Index</h1>
+
+
+<h1>!~~Available Bikes in my shop~~!</h1>
 
 <div class="btn btn-dark">
-    <a asp-area="Biker" asp-controller="Orders" asp-action="Create"> Proceed to Checkout  </a>
+    <a asp-area="Biker" asp-controller="Orders" asp-action="Create"> Proceed to Order  </a>
 </div>
 <table class="table">
     <thead>
@@ -51,7 +53,13 @@
             </td>
             <td>
                @* <a asp-action="Edit" asp-route-id="@item.ProductId">Edit</a> *@
-                <a asp-action="Details" asp-route-id="@item.ProductId">Details</a> 
+                    <div class="btn btn-dark">
+                        <a asp-action="Details" asp-route-id="@item.ProductId">Details</a>
+                    </div>
+               
+                   @* <div class="btn btn-dark">
+                        <a asp-area="Biker" asp-controller="Orders" asp-action="Create">Order Now</a>
+                    </div>*@
                @* <a asp-action="Delete" asp-route-id="@item.ProductId">Delete</a>*@
             </td>
         </tr>

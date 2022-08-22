@@ -22,6 +22,7 @@ namespace BikersPortal.Models
 
 
 
+        //Order Placed Date
 
         [Display(Name = "Date")]
         [Required]
@@ -34,11 +35,11 @@ namespace BikersPortal.Models
 
 
 
-        #region Dish  Link 
+        #region  product  Link 
 
         [Display(Name = "Product")]
         public int ProductId { get; set; }
-        [ForeignKey(nameof(Order.ProductId))]
+        [ForeignKey(nameof(Order.ProductId))]          //Make ForeignKey using Product Table(Id)
         public Product Product { get; set;  }
 
         #endregion
@@ -47,13 +48,13 @@ namespace BikersPortal.Models
         [Required(ErrorMessage = "Don't leave {0} Empty!")]
         [Display(Name = "Quantity(Number of Product)")]
         [DefaultValue(1)]
-        public short NumberOfProduct { get; set; }
+        public short NumberOfProduct { get; set; }      //Number Of Product 
 
-
-        [Display(Name = "Customer")]
+         
+        [Display(Name = "Customer")]                    //Custome Name
         public int CustomerId { get; set; }
-        [ForeignKey(nameof(Order.CustomerId))]
-        public Customer Customer { get; set; }
+        [ForeignKey(nameof(Order.CustomerId))]          //Make ForeignKey using Customer Table(Id)
+        public Customer Customer { get; set; }         
 
      
 
@@ -63,7 +64,7 @@ namespace BikersPortal.Models
 
         [Display(Name = "Payment Method")]
         public int PaymentMethodId { get; set; }
-        [ForeignKey(nameof(Order.PaymentMethodId))]
+        [ForeignKey(nameof(Order.PaymentMethodId))]              //Make ForeignKey using Payment Method Table(Id)
         public PaymentMethod PaymentMethods { get; set; }
 
         #endregion
@@ -72,14 +73,14 @@ namespace BikersPortal.Models
         [Required]
         [DataType(DataType.Currency)]
         [Display(Name = "Price")]
-        public Double Price { get; set; }
+        public Double Price { get; set; }                        //Price of Bike in dollars
 
         [Display(Name ="Product Description")]
-        public String Description  { get; set; }
+        public String Description  { get; set; }                 //Customer can Give Description of product
 
         [Required]
         [DefaultValue(true)]
-        [Display(Name = "Order Placed")]
+        [Display(Name = "Order Placed")]                        //Order Placed
         public bool OrderPlaced { get; set; }
 
 

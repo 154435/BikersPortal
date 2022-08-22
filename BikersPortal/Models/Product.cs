@@ -18,10 +18,10 @@ namespace BikersPortal.Models
         #region Directing to Category
 
 
-        [Display(Name = "Dish Category")]
+        [Display(Name = "Product Category")]
         public int ProductTypeId { get; set; }
-        [ForeignKey(nameof(Product.ProductTypeId))]
-        public ProductType ProductType { get; set; }
+        [ForeignKey(nameof(Product.ProductTypeId))]            //Make ForeignKey using Product Type Table(Id)
+        public ProductType ProductType { get; set; }            //Bike Company Name
 
         #endregion
 
@@ -30,25 +30,25 @@ namespace BikersPortal.Models
         [Required(ErrorMessage = "Don't leave {0} Empty!")]
         [Column(TypeName = "varchar(100)")]
         [Display(Name = "ProductName")]
-        public string ProductName { get; set; }
+        public string ProductName { get; set; }                 //Bike Name
 
 
         [Required]
         [DefaultValue(true)]
         [Display(Name = "In Stock")]
-        public bool Available { get; set; }
+        public bool Available { get; set; }                     //In stock
 
         [Required]
         [DataType(DataType.Currency)]
         [Display(Name = "Price")]
-        public float Price { get; set; }
+        public float Price { get; set; }                        //price of bike
 
 
         [Display(Name = "Product Image")]
-        public string ImgUrl { get; set; } 
+        public string ImgUrl { get; set; }                     //Image of Bike
 
         #region Navigate Collection to Order
-        public ICollection<Order> Orders { get; set; }
+        public ICollection<Order> Orders { get; set; }        //Collection of Order Table
         #endregion
 
 

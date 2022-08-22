@@ -4,11 +4,16 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
 
-<p>
+
+
+<body style="background-image:url(https://cdna.artstation.com/p/assets/images/images/047/437/968/large/pixoartist-project-1-18-5.jpg?1647578559);">
+    <!-- Search End -->
+<h1>!--All Regitered Customers in my shop--! </h1>
+
+@*<p>
     <a asp-action="Create">Create New</a>
-</p>
+</p>*@
 <table class="table">
     <thead>
         <tr>
@@ -43,11 +48,18 @@
                 @Html.DisplayFor(modelItem => item.Address)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.CustomerId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.CustomerId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.CustomerId">Delete</a>
-            </td>
+                <div class="btn btn-dark">
+                         <a asp-action="Edit" asp-route-id="@item.CustomerId">Edit</a> |
+                </div>
+                <div class="btn btn-dark">
+                        <a asp-action="Details" asp-route-id="@item.CustomerId">Details</a> |
+               </div>
+                <div class="btn btn-dark">
+                        <a asp-action="Delete" asp-route-id="@item.CustomerId">Delete</a> |
+               </div>
+           </td>
         </tr>
 }
     </tbody>
 </table>
+</body>

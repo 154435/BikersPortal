@@ -1,0 +1,62 @@
+﻿@model IEnumerable<BikersPortal.Models.Customer>
+
+@{
+    ViewData["Title"] = "Index1";
+}
+
+
+
+
+<body style="background-image:url(https://cdna.artstation.com/p/assets/images/images/047/437/968/large/pixoartist-project-1-18-5.jpg?1647578559);">
+    <!-- Search End -->
+<h1>!~~Customers in my shop~~!</h1>
+  <div class="btn btn-dark">
+       <a asp-action="Create">Regiter here</a>
+  </div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MobileNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MobileNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+               @* <a asp-action="Edit" asp-route-id="@item.CustomerId">Edit</a> |*@
+                
+               <div class="btn btn-dark">
+                        <a asp-action="Details" asp-route-id="@item.CustomerId">Details</a> |
+               </div>
+                    
+                @*<a asp-action="Delete" asp-route-id="@item.CustomerId">Delete</a>*@
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</body>

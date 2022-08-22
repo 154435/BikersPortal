@@ -5,86 +5,127 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - BikersPortal</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/site.css"/>
+    <meta charset="utf-8">
+    <title>ROYAL CARS - Car Rental HTML Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Rubik&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="~/js/Bootstrap.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="~/css/style.css" rel="stylesheet">
+
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">BikersPortal</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Admin</a>
-                            <div class="dropdown-menu" style="background-color:greenyellow">
-                                <a class="dropdown-item"
-                                   asp-area="Biker" asp-controller="Customers" asp-action="Index">
-                                  Manage Customer
-                                </a>
-                                <a class="dropdown-item"
-                                   asp-area="Biker" asp-controller="Products" asp-action="Index">
-                                   Manage Products
-                                </a>
-                                <a class="dropdown-item"
-                                   asp-area="Biker" asp-controller="Orders" asp-action="Index">
-                                   Manage Orders
-                                </a>
-                                <a class="dropdown-item"
-                                   asp-area="Biker" asp-controller="ProductTypes" asp-action="Index">
-                                   Manage ProductTypes
-                                </a>
-                                <a class="dropdown-item"
-                                   asp-area="Biker" asp-controller="PaymentMethods" asp-action="Index">
-                                   Manage PaymentMethods
-                                </a>
-
-
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">User Portal</a>
-                            <div class="dropdown-menu" style="background-color:greenyellow">
-                             @*   <a class="dropdown-item"
-                                   asp-area="Biker" asp-controller="Customers" asp-action="Index">
-                                    Customer
-                                </a>*@
-                                <a class="dropdown-item"
-                                   asp-area="Biker" asp-controller="Products" asp-action="Index1">
-                                    Products
-                                </a>
-                                 <a class="dropdown-item"
-                                   asp-area="Biker" asp-controller="Orders" asp-action="Index1">
-                                    Orders
-                                </a>
-                            </div>
-                        </li>
-                    </ul>
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-dark py-3 px-lg-5 d-none d-lg-block">
+        <div class="row">
+            <div class="col-md-6 text-center text-lg-left mb-2 mb-lg-0">
+                <div class="d-inline-flex align-items-center">
+                    <a class="text-body pr-3" href=""><i class="fa fa-phone-alt mr-2"></i>+012 345 6789</a>
+                    <span class="text-body">|</span>
+                    <a class="text-body px-3" href=""><i class="fa fa-envelope mr-2"></i>info@example.com</a>
                 </div>
             </div>
-        </nav>
-    </header>
+            <div class="col-md-6 text-center text-lg-right">
+                <div class="d-inline-flex align-items-center">
+                    <a class="text-body px-3" href="">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a class="text-body px-3" href="">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a class="text-body px-3" href="">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a class="text-body px-3" href="">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a class="text-body pl-3" href="">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+    <!-- Navbar Start -->
+    <div class="container-fluid position-relative nav-bar p-0">
+        <div class="position-relative px-lg-5" style="z-index: 9;">
+            <nav class="navbar navbar-expand-lg bg-secondary navbar-dark py-3 py-lg-0 pl-3 pl-lg-5">
+                <a href="" class="navbar-brand">
+                    <h1 class="text-uppercase text-primary mb-1">Royal Bikes</h1>
+                </a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
+                    <div class="navbar-nav ml-auto py-0">
+                        <a href="https://localhost:44306/" class="nav-item nav-link active">Home</a>
+                        @* <a href="about.html" class="nav-item nav-link">About</a>*@
+                        @*  <a href="service.html" class="nav-item nav-link">Service</a>*@
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Admin</a>
+                            <div class="dropdown-menu rounded-0 m-0">
+                                <a href="https://localhost:44306/Biker/Customers" class="dropdown-item">Manage Customers</a>
+                                <a href="https://localhost:44306/Biker/Products" class="dropdown-item">Manage Products</a>
+                                <a href="https://localhost:44306/Biker/Orders" class="dropdown-item">Manage Orders</a>
+                                <a href="https://localhost:44306/Biker/ProductTypes" class="dropdown-item">Manage Product Types</a>
+                                <a href="https://localhost:44306/Biker/PaymentMethods" class="dropdown-item">Manage Payment Methods</a>
+                            </div>
+                        </div>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">User Portal</a>
+                            <div class="dropdown-menu rounded-0 m-0">
+                                @* <a href="https://localhost:44306/Biker/Customers" class="dropdown-item">New Customers</a>*@
+                                <a href="https://localhost:44306/Biker/Customers/Index1" class="dropdown-item">Customers</a>
+                                <a href="https://localhost:44306/Biker/Products/Index1" class="dropdown-item">Products</a>
+                                <a href="https://localhost:44306/Biker/Orders/Index1" class="dropdown-item">Orders</a>
+                            </div>
+                        </div>
+                        @*  <a href="contact.html" class="nav-item nav-link">Contact</a>*@
+                      @*  <a href="https://localhost:44306/Identity/Account/Register" class="nav-item nav-link">Register</a>
+                        <a href="https://localhost:44306/Identity/Account/Login" class="nav-item nav-link">Login</a>*@
+                    </div>
+                
+                </div>
+                @* Inserting the Login Partial View *@
+                <partial name="_LoginPartial" />
+            </nav>
+        </div>
+    </div>
+
+    <!-- Search End -->
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+@*    <footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2022 - BikersPortal - <a asp-area="" asp-page="/Privacy">Privacy</a>
         </div>
     </footer>
-
+*@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
@@ -92,3 +133,6 @@
     @RenderSection("Scripts", required: false)
 </body>
 </html>
+
+
+

@@ -4,11 +4,12 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+<body style="background-image:url(https://cdna.artstation.com/p/assets/images/images/047/437/968/large/pixoartist-project-1-18-5.jpg?1647578559);">
+<h1>Product Types</h1>
+  <div class="btn btn-dark">
+      <a asp-action="Create">Create New</a>
+  </div>
 <table class="table">
     <thead>
         <tr>
@@ -25,11 +26,18 @@
                 @Html.DisplayFor(modelItem => item.ProductTypes)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.ProductTypeId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ProductTypeId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ProductTypeId">Delete</a>
-            </td>
+               <div class="btn btn-dark">
+                     <a asp-action="Edit" asp-route-id="@item.ProductTypeId">Edit</a> |
+               </div>
+               <div class="btn btn-dark">
+                      <a asp-action="Details" asp-route-id="@item.ProductTypeId">Details</a> |
+               </div>
+                <div class="btn btn-dark">
+                     <a asp-action="Delete" asp-route-id="@item.ProductTypeId">Delete</a>
+               </div>
+           </td>
         </tr>
 }
     </tbody>
 </table>
+</body>

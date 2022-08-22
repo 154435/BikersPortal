@@ -4,14 +4,16 @@
     ViewData["Title"] = "Index1";
 }
 
-<h1>Index</h1>
+
+<body style="background-image:url(https://cdna.artstation.com/p/assets/images/images/047/437/968/large/pixoartist-project-1-18-5.jpg?1647578559);">
+<h1>Orders</h1>
 
 @*<p>
     <a asp-action="Create">Create New</a>
 </p>*@
-<div class="btn btn-dark">
+@*<div class="btn btn-dark">
     <a asp-area="Biker" asp-controller="Orders" asp-action="Create"> Order Now`  </a>
-</div>
+</div>*@
 <table class="table">
     <thead>
         <tr>
@@ -72,9 +74,14 @@
             <td>
                 @*<a asp-action="Edit" asp-route-id="@item.OrderId">Edit</a> |*@
                 <a asp-action="Details" asp-route-id="@item.OrderId">Details</a> |
+                    <div class="btn btn-dark">
+                        <a asp-area="Biker" asp-controller="Orders" asp-action="Index2">View</a>
+                    </div>
+
                @* <a asp-action="Delete" asp-route-id="@item.OrderId">Delete</a>*@
             </td>
         </tr>
 }
     </tbody>
 </table>
+</body>

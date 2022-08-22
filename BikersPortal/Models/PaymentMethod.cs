@@ -16,10 +16,10 @@ namespace BikersPortal.Models
         public int PaymentMethodId { get; set; }
 
         [Required(ErrorMessage = "{0} Should be Mentioned")]
-        [StringLength(50)]
+        [StringLength(50)]                                               //Validations
         [MinLength(2, ErrorMessage = "{0} Should Be Valid")]
         [MaxLength(50, ErrorMessage = "{0} Should Be Valid")]
-        [Display(Name = "Payment Method")]
+        [Display(Name = "Payment Method")]                               //Payment Method Name(eg Paytm,Google pay)
         public string PaymentMethodName { get; set; }
 
         [Required]
@@ -28,7 +28,7 @@ namespace BikersPortal.Models
         public bool MethodEnabled { get; set; }
 
         #region Navigate Collection to Order
-        public ICollection<Order> Orders { get; set; }
+        public ICollection<Order> Orders { get; set; }                   //Collection of order Table
         #endregion
 
 

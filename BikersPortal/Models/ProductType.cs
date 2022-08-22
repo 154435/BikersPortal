@@ -17,11 +17,11 @@ namespace BikersPortal.Models
         [Required(ErrorMessage = "Don't leave {0} Empty!")]
         [Column(TypeName = "varchar(100)")]
         [Display(Name = "Product Types")]
-        public string ProductTypes { get; set; }
+        public string ProductTypes { get; set; }                     //Bike Company Name
 
 
         #region Navigate Collection to Product
-        public ICollection<Product> Product { get; set; }
+        public ICollection<Product> Product { get; set; }            //Collection of Product Table
         #endregion
 
 

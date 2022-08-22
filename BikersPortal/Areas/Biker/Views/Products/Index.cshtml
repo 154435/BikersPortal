@@ -4,7 +4,8 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+
+<h1>!~~Available Bikes in my shop~~!</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -50,11 +51,18 @@
                     <img class="card-img-top" src="@item.ImgUrl" style="width:16rem;height:17rem;">
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.ProductId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ProductId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ProductId">Delete</a>
+               <div class="btn btn-dark">
+                      <a asp-action="Edit" asp-route-id="@item.ProductId">Edit</a> |
+               </div>
+               <div class="btn btn-dark">
+                      <a asp-action="Details" asp-route-id="@item.ProductId">Details</a> |
+               </div>
+                <div class="btn btn-dark">
+                     <a asp-action="Delete" asp-route-id="@item.ProductId">Delete</a>
+               </div>
             </td>
         </tr>
 }
     </tbody>
 </table>
+
