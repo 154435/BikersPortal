@@ -18,7 +18,7 @@ namespace BikersPortal.Models
         #region Directing to Category
 
 
-        [Display(Name = "Product Category")]
+        [Display(Name = "Company Name")]
         public int ProductTypeId { get; set; }
         [ForeignKey(nameof(Product.ProductTypeId))]            //Make ForeignKey using Product Type Table(Id)
         public ProductType ProductType { get; set; }            //Bike Company Name
@@ -29,7 +29,7 @@ namespace BikersPortal.Models
 
         [Required(ErrorMessage = "Don't leave {0} Empty!")]
         [Column(TypeName = "varchar(100)")]
-        [Display(Name = "ProductName")]
+        [Display(Name = "Bike Name")]
         public string ProductName { get; set; }                 //Bike Name
 
 
@@ -44,7 +44,7 @@ namespace BikersPortal.Models
         public float Price { get; set; }                        //price of bike
 
 
-        [Display(Name = "Product Image")]
+        [Display(Name = "Bike Image")]
         public string ImgUrl { get; set; }                     //Image of Bike
 
         #region Navigate Collection to Order

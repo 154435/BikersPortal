@@ -16,7 +16,7 @@ namespace BikersPortal.Models
 
         [Required(ErrorMessage = "Don't leave {0} Empty!")]
         [Column(TypeName = "varchar(100)")]
-        [Display(Name = "Product Types")]
+        [Display(Name = "Company Name")]
         public string ProductTypes { get; set; }                     //Bike Company Name
 
 

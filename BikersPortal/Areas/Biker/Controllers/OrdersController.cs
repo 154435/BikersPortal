@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using BikersPortal.Data;
 using BikersPortal.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Routing;
 
 namespace BikersPortal.Areas.Biker.Controllers
 {
@@ -96,7 +97,8 @@ namespace BikersPortal.Areas.Biker.Controllers
             {
                 _context.Add(order);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index1));
+                // return RedirectToAction(nameof(Index1));     //< a asp - action = "Details" asp - route - id = "@item.OrderId" > Details </ a > |
+                 return RedirectToAction("Details", new { id = order.OrderId });
             }
             ViewData["CustomerId"] = new SelectList(_context.Customers, "CustomerId", "CustomerName", order.CustomerId);
             ViewData["PaymentMethodId"] = new SelectList(_context.PaymentMethod, "PaymentMethodId", "PaymentMethodName", order.PaymentMethodId);
