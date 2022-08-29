@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 using System.Xml.Linq;
 
 namespace BikersPortal.Models
@@ -20,7 +21,8 @@ namespace BikersPortal.Models
         public string ProductTypes { get; set; }                     //Bike Company Name
 
 
-        #region Navigate Collection to Product
+        #region Navigate Collection to Product\
+        [JsonIgnore]
         public ICollection<Product> Product { get; set; }            //Collection of Product Table
         #endregion
 

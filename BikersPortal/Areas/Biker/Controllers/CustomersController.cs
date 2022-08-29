@@ -11,8 +11,9 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace BikersPortal.Areas.Biker.Controllers
 {
-    [Authorize]
+   
     [Area("Biker")]
+    [Authorize]
     public class CustomersController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -23,6 +24,7 @@ namespace BikersPortal.Areas.Biker.Controllers
         }
 
         // GET: Biker/Customers
+       
         public async Task<IActionResult> Index()
         {
             return View(await _context.Customers.ToListAsync());
@@ -30,6 +32,7 @@ namespace BikersPortal.Areas.Biker.Controllers
 
 
         // GET: Biker/Customers/Index1
+        
         public async Task<IActionResult> Index1()
         {
             return View(await _context.Customers.ToListAsync());
@@ -54,6 +57,8 @@ namespace BikersPortal.Areas.Biker.Controllers
         }
 
         // GET: Biker/Customers/Create
+        //[Authorize(Roles = "Appuser")]
+        
         public IActionResult Create()
         {
             return View();
@@ -62,6 +67,7 @@ namespace BikersPortal.Areas.Biker.Controllers
         // POST: Biker/Customers/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+       
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("CustomerId,CustomerName,MobileNumber,Email,Address")] Customer customer)
@@ -70,7 +76,7 @@ namespace BikersPortal.Areas.Biker.Controllers
             {
                 _context.Add(customer);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index1));
+                return RedirectToAction("Details", new {id=customer.CustomerId});
             }
             return View(customer);
         }

@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Xml.Linq;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Text.Json.Serialization;
 
 namespace BikersPortal.Models
 {
@@ -17,7 +18,7 @@ namespace BikersPortal.Models
 
         #region Directing to Category
 
-
+        [JsonIgnore]
         [Display(Name = "Company Name")]
         public int ProductTypeId { get; set; }
         [ForeignKey(nameof(Product.ProductTypeId))]            //Make ForeignKey using Product Type Table(Id)
@@ -48,6 +49,7 @@ namespace BikersPortal.Models
         public string ImgUrl { get; set; }                     //Image of Bike
 
         #region Navigate Collection to Order
+        [JsonIgnore]
         public ICollection<Order> Orders { get; set; }        //Collection of Order Table
         #endregion
 

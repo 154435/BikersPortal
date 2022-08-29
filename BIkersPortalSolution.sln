@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32804.467
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BikersPortal", "BikersPortal\BikersPortal.csproj", "{9A3B2323-50FD-47DE-B0A5-CD79AF9D8996}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BikersPortal", "BikersPortal\BikersPortal.csproj", "{9A3B2323-50FD-47DE-B0A5-CD79AF9D8996}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BikersPortalxUnitTest", "BikersPortalxUnitTest\BikersPortalxUnitTest.csproj", "{0C327478-A209-40DE-A578-9F6B294992EF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{9A3B2323-50FD-47DE-B0A5-CD79AF9D8996}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9A3B2323-50FD-47DE-B0A5-CD79AF9D8996}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9A3B2323-50FD-47DE-B0A5-CD79AF9D8996}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C327478-A209-40DE-A578-9F6B294992EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C327478-A209-40DE-A578-9F6B294992EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C327478-A209-40DE-A578-9F6B294992EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C327478-A209-40DE-A578-9F6B294992EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

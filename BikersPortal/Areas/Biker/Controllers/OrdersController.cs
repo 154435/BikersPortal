@@ -12,8 +12,9 @@ using Microsoft.AspNetCore.Routing;
 
 namespace BikersPortal.Areas.Biker.Controllers
 {
-    [Authorize]
+   
     [Area("Biker")]
+    [Authorize]
     public class OrdersController : Controller
     {
         private readonly ApplicationDbContext _context;

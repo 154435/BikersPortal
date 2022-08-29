@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - BikersPortal</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css"/>
+    <link rel="stylesheet" href="~/css/site.css" />
     <meta charset="utf-8">
     <title>ROYAL CARS - Car Rental HTML Template</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -82,29 +82,29 @@
                         @* <a href="about.html" class="nav-item nav-link">About</a>*@
                         @*  <a href="service.html" class="nav-item nav-link">Service</a>*@
                         <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Admin</a>
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Shop</a>
                             <div class="dropdown-menu rounded-0 m-0">
-                                <a href="https://localhost:44306/Biker/Customers" class="dropdown-item">Manage Customers</a>
-                                <a href="https://localhost:44306/Biker/Products" class="dropdown-item">Manage Products</a>
-                                <a href="https://localhost:44306/Biker/Orders" class="dropdown-item">Manage Orders</a>
-                                <a href="https://localhost:44306/Biker/ProductTypes" class="dropdown-item">Manage Product Types</a>
-                                <a href="https://localhost:44306/Biker/PaymentMethods" class="dropdown-item">Manage Payment Methods</a>
+                                <a href="https://localhost:44306/Biker/Customers" class="dropdown-item">View Customers</a>
+                                <a href="https://localhost:44306/Biker/Products" class="dropdown-item">View Products</a>
+                                <a href="https://localhost:44306/Biker/Orders" class="dropdown-item">View Orders</a>
+                                <a href="https://localhost:44306/Biker/ProductTypes" class="dropdown-item">View Product Types</a>
+                                <a href="https://localhost:44306/Biker/PaymentMethods" class="dropdown-item">View Payment Methods</a>
                             </div>
                         </div>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">User Portal</a>
                             <div class="dropdown-menu rounded-0 m-0">
                                 @* <a href="https://localhost:44306/Biker/Customers" class="dropdown-item">New Customers</a>*@
-                                <a href="https://localhost:44306/Biker/Customers/Index1" class="dropdown-item">Customers</a>
-                                <a href="https://localhost:44306/Biker/Products/Index1" class="dropdown-item">Products</a>
+                                <a href="https://localhost:44306/Biker/Customers/Create" class="dropdown-item">New Customer</a>
+                                <a href="https://localhost:44306/Biker/Products/Index1" class="dropdown-item">Available Bikes in shop</a>
                                 <a href="https://localhost:44306/Biker/Orders/Index1" class="dropdown-item">Orders</a>
                             </div>
                         </div>
                         @*  <a href="contact.html" class="nav-item nav-link">Contact</a>*@
-                      @*  <a href="https://localhost:44306/Identity/Account/Register" class="nav-item nav-link">Register</a>
+                        @*  <a href="https://localhost:44306/Identity/Account/Register" class="nav-item nav-link">Register</a>
                         <a href="https://localhost:44306/Identity/Account/Login" class="nav-item nav-link">Login</a>*@
                     </div>
-                
+
                 </div>
                 @* Inserting the Login Partial View *@
                 <partial name="_LoginPartial" />
@@ -120,12 +120,12 @@
         </main>
     </div>
 
-@*    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2022 - BikersPortal - <a asp-area="" asp-page="/Privacy">Privacy</a>
-        </div>
+    @*    <footer class="border-top footer text-muted">
+    <div class="container">
+    &copy; 2022 - BikersPortal - <a asp-area="" asp-page="/Privacy">Privacy</a>
+    </div>
     </footer>
-*@
+    *@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

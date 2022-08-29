@@ -11,8 +11,9 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace BikersPortal.Areas.Biker.Controllers
 {
-    [Authorize]
+
     [Area("Biker")]
+    [Authorize]
     public class ProductsController : Controller
     {
         private readonly ApplicationDbContext _context;

@@ -11,8 +11,9 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace BikersPortal.Areas.Biker.Controllers
 {
-    [Authorize]
+
     [Area("Biker")]
+    [Authorize(Roles = "AppAdmin")]
     public class PaymentMethodsController : Controller
     {
         private readonly ApplicationDbContext _context;

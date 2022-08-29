@@ -32,7 +32,6 @@
   <ItemGroup>
     <Folder Include="Areas\Biker\Models\" />
     <Folder Include="Areas\Biker\ViewModels\" />
-    <Folder Include="Controllers\" />
     <Folder Include="wwwroot\Img\" />
   </ItemGroup>
 
